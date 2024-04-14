@@ -2,6 +2,10 @@
 
 A web-based ToDo application for managing tasks.
 
+## Overview
+
+<img width="1575" alt="demo" src="/public/demo.png">
+
 ## Installation
 
 Use your favourite package manager, I use `pnpm`:
