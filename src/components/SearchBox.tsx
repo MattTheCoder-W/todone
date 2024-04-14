@@ -2,7 +2,7 @@
 
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
-import { PlusCircle, Search } from "lucide-react";
+import { PlusCircle, Search, User } from "lucide-react";
 
 
 
@@ -44,7 +44,13 @@ const SearchBox = () => {
 
     return (
         <div className="w-full flex justify-stretch items-center">
-            <div className="w-1/2 flex justify-center items-center space-x-4">
+            <div className="w-1/4 flex justify-start items-center">
+                {/* Options */}
+                <div>
+                    <NewTaskDialog />
+                </div>
+            </div>
+            <div className="w-full flex justify-center items-center space-x-4">
                 {/* Search form */}
                 <Input
                 type="text"
@@ -63,11 +69,17 @@ const SearchBox = () => {
                     <Search className="w-4 h-4 ml-2" />
                 </Button>
             </div>
-            <div className="w-1/2 flex justify-end items-center">
-                {/* Options */}
-                <div>
-                    <NewTaskDialog />
-                </div>
+            <div className="w-1/4 flex justify-end items-center">
+                {/* Account icon */}
+                <Button
+                variant="ghost"
+                aria-label="account view"
+                className="flex items-center justify-center space-x-2 text-primary hover:text-muted-foreground transition-colors duration-300">
+                    <span className="text-md font-semibold">
+                        username
+                    </span>
+                    <User className="w-8 h-8" />
+                </Button>
             </div>
         </div>
     )

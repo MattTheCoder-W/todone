@@ -36,8 +36,8 @@ export default function RootLayout({
         <Toaster />
         <div className="bg-gray-100 grid grid-cols-10 space-x-0 space-y-0 grid-rows-[auto,1fr] min-h-screen">
           <div className="row-start-1 col-span-2 p-4 border-r border-b border-zinc-300">
-              <Link href="#" className={cn(anton.className, 'flex items-center')}>
-                  <CheckSquare className="w-6 h-6 mr-2" />
+              <Link href="/" className={cn(anton.className, '')}>
+                  <CheckSquare className="w-6 h-6 mr-2 inline -mt-2" />
                   <span className="relative text-2xl leading-none
                   after:w-full after:h-1 after:bg-black after:absolute after:left-0 after:bottom-[calc(50%-0.2rem)]
                   after:opacity-0 after:hover:opacity-100 after:-translate-x-1/2 after:hover:translate-x-0 after:transition-all after:duration-500">
@@ -52,7 +52,7 @@ export default function RootLayout({
           <div className="col-span-2 border-r border-zinc-300">
             <SideBar />
           </div>
-          <div className="col-span-8 bg-white/70 p-4">
+          <div className="col-span-8 bg-white/70">
             {children}
           </div>
         </div>

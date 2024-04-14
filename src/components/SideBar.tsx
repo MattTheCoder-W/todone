@@ -32,7 +32,7 @@ const SideBar = () => {
 
     return (
         <div className="flex flex-col justify-center items-center">
-            <Item router={router} href="/home" isCurrent={pathname === '/home'}>
+            <Item router={router} href="/" isCurrent={pathname === '/'}>
                 <Home className="w-5 h-5 mr-2" />
                 Home
             </Item>
