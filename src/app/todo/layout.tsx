@@ -10,13 +10,16 @@ const anton = Anton({
 
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import { redirect } from "next/navigation";
+import { getUsername } from "@/server/actions";
 
 const Layout = async ({ children }: { children: React.ReactNode }) => {
   const {getUser} = await getKindeServerSession() 
   const user = await getUser()
   if(!user || !user.id) redirect("/")
 
-  const username = user?.given_name ? user?.given_name : "user"
+  const customUsername = await getUsername(user.id)
+
+  const username = user?.given_name && !customUsername ? user?.given_name : (customUsername ? customUsername : 'user')
   const profilepic = user?.picture ? user?.picture : "https://avatars.dicebear.com/api/initials/user.svg"
 
   return (

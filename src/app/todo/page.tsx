@@ -2,8 +2,18 @@
 
 import { Skeleton } from "@/components/ui/skeleton";
 import Task from "@/components/Task";
+import { useEffect } from "react";
+import { getTasksFromUser } from "@/server/actions";
 
 const Page = () => {
+    useEffect(() => {
+        const getTasks = async() => {
+            const tasks = await getTasksFromUser('test')
+            console.log("got tasks:", tasks)
+        }
+        getTasks()
+    }, [])
+
     return(
         <div className="grid grid-cols-2 lg:grid-cols-4 min-h-full">
             <div className="lg:col-span-3 border-r border-zinc-300 bg-white">
