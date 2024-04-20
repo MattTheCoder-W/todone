@@ -43,6 +43,7 @@ const Page = async () => {
 
     redirect("/todo")
 
+
     return (
         <div className="text-zinc-600 h-screen w-full flex flex-col justify-center items-center space-y-8">
             <h1 className="font-semibold text-2xl">
